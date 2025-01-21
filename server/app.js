@@ -54,11 +54,11 @@ const fetchQuestionsToMemory = async () => {
 };
 
 
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Quiz App API');
 })
 // Route to register a new user
-app.post('/api/auth/register', async (req, res) => {
+app.post('/auth/register', async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -83,7 +83,7 @@ app.post('/api/auth/register', async (req, res) => {
 });
 
 // Route to log in a user
-app.post('/api/auth/login', async (req, res) => {
+app.post('/auth/login', async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -110,7 +110,7 @@ app.post('/api/auth/login', async (req, res) => {
 });
 
 // Route to get questions from memory
-app.get('/api/quiz/questions',(req, res) => {
+app.get('/quiz/questions',(req, res) => {
   if (quizQuestions.length > 0) {
     res.json(quizQuestions);
   } else {
@@ -120,7 +120,7 @@ app.get('/api/quiz/questions',(req, res) => {
 
 // Route to submit quiz and store result in MongoDB
 // Route to submit quiz and store result in MongoDB
-app.post('/api/quiz/submit', async (req, res) => {
+app.post('/quiz/submit', async (req, res) => {
   try {
     const { email, answers, score, questions } = req.body;
     
@@ -145,7 +145,7 @@ app.post('/api/quiz/submit', async (req, res) => {
 
 // Fetch specific quiz by ID
 // Route to fetch the quiz result by its ID
-app.get('/api/report/:id', async (req, res) => {
+app.get('/report/:id', async (req, res) => {
   try {
     const { id } = req.params; // Get quiz ID from request parameters
     const quiz = await QuizResult.findById(id); // Find quiz result by its MongoDB ID
@@ -161,7 +161,7 @@ app.get('/api/report/:id', async (req, res) => {
   }
 });
 
-app.get('/api/quizzes', quizRoutes);
+app.get('/quizzes', quizRoutes);
 
 // MongoDB Connection and Server Start
 mongoose

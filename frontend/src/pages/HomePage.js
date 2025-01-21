@@ -17,7 +17,7 @@ function HomePage() {
   const login = async () => {
     if (email && password) {
       try {
-        const response = await axios.post('https://quizz-app-backend-beta.vercel.app/api/auth/login', { email, password });
+        const response = await axios.post('https://quizz-app-backend-beta.vercel.app/auth/login', { email, password });
         setUserData(response.data.user);
         setQuizzes(response.data.quizzes);
         setIsLoggedIn(true);
@@ -40,7 +40,7 @@ function HomePage() {
   const register = async () => {
     if (email && password) {
       try {
-        await axios.post('https://quizz-app-backend-beta.vercel.app/api/auth/register', { email, password });
+        await axios.post('https://quizz-app-backend-beta.vercel.app/auth/register', { email, password });
         alert('Registration successful! Please log in.');
       } catch (error) {
         console.error('Error during registration:', error);

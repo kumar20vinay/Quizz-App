@@ -3,7 +3,7 @@ const router = express.Router();
 const Quiz = require('../models/quizResultModel');
 
 // Fetch quizzes for a user
-router.get('/api/quizzes', async (req, res) => {
+router.get('/quizzes', async (req, res) => {
   try {
     const { email } = req.query; // Get the email from query params
     if (!email) {
