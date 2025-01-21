@@ -12,7 +12,7 @@ function Dashboard() {
   useEffect(() => {
     if (email) {
       axios
-        .get('http://localhost:5000/api/quizzes', { params: { email } })
+        .get('https://quizz-app-backend-beta.vercel.app/api/quizzes', { params: { email } })
         .then((response) => {
           if (response.data.user) {
             setUserData(response.data.user);

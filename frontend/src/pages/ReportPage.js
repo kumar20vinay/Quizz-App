@@ -10,7 +10,7 @@ function ReportPage({ onBack }) {
   useEffect(() => {
     // Fetch quiz result by ID from backend API
     axios
-      .get(`http://localhost:5000/api/report/${id}`)
+      .get(`https://quizz-app-backend-beta.vercel.app/api/report/${id}`)
       .then((response) => setQuizResult(response.data))
       .catch((error) => console.error('Error fetching quiz result:', error));
   }, [id]);

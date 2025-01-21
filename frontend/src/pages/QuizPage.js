@@ -18,7 +18,7 @@ function QuizPage() {
   // Fetch questions from the backend in a separate useEffect
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/quiz/questions')
+      .get('https://quizz-app-backend-beta.vercel.app/api/quiz/questions')
       .then((response) => {
         const fetchedQuestions = response.data;
         setQuestions(fetchedQuestions);
@@ -103,7 +103,7 @@ function QuizPage() {
 
     // Save quiz result to MongoDB
     axios
-      .post('http://localhost:5000/api/quiz/submit', payload)
+      .post('https://quizz-app-backend-beta.vercel.app/api/quiz/submit', payload)
       .then((response) => {
         const quizId = response.data._id; // Get quizId from the response
         navigate(`/report/${quizId}`); // Redirect to report page with quizId
