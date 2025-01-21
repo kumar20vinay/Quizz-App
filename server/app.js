@@ -25,6 +25,10 @@ app.options('*', cors());
 
 app.use(express.json());
 
+app.use((req, res) => {
+  res.status(404).json({ error: 'Endpoint not found' });
+});
+
 // Decode HTML entities
 const decodeHtmlEntities = (input) => decode(input || '');
 
@@ -48,6 +52,7 @@ const fetchQuestionsToMemory = async () => {
     console.error('Error fetching questions:', error);
   }
 };
+
 
 app.get('/', (req, res) => {
   res.send('Quiz App API');
