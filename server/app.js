@@ -15,7 +15,11 @@ const API_URL = 'https://opentdb.com/api.php?amount=15';
 let quizQuestions = []; // In-memory JSON object to store questions
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://quizz-app-frontend-steel.vercel.app/',
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 app.use(express.json());
 
 // Decode HTML entities
