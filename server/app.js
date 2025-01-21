@@ -46,8 +46,9 @@ const fetchQuestionsToMemory = async () => {
   }
 };
 
-
-
+app.get('/', (req, res) => {
+  res.send('Quiz App API');
+})
 // Route to register a new user
 app.post('/api/auth/register', async (req, res) => {
   const { email, password } = req.body;
@@ -161,7 +162,7 @@ mongoose
     console.log('Connected to MongoDB');
     await fetchQuestionsToMemory(); // Fetch questions on startup
     app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
+      console.log(`Server running`);
     });
   })
   .catch((error) => console.error('Database connection error:', error));
