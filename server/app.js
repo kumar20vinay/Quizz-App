@@ -17,7 +17,6 @@ let quizQuestions = []; // In-memory JSON object to store questions
 // Middleware
 app.use(cors({
   origin: 'https://quizz-app-frontend-steel.vercel.app',
-  methods: ['GET', 'POST'],
   credentials: true
 }));
 app.use(express.json());
