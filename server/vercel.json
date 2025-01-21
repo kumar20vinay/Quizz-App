@@ -3,10 +3,10 @@
   "builds": [
     { "src": "*.js", "use": "@vercel/node" }
   ],
-  "routes": [
+  "rewrites": [
       {
         "src": "/(.*)",
-        "dest": "app.js",
+        "dest": "/",
         "headers": {
           "Access-Control-Allow-Origin": "*"
         }
