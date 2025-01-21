@@ -1,0 +1,161 @@
+/* Report page container */
+.report-page {
+  display: flex;
+  flex-direction: row;
+  background-color: #f4f7fc; /* Soft background color */
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  justify-content: flex-start; /* Align items from the left */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Sidebar styling */
+.report-sidebar {
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  justify-content: flex-start; /* Align content to the top */
+  width: 250px; /* Fixed width for the sidebar */
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-right: 20px;
+  position: sticky;
+  top: 0px; /* Make sidebar stick to the top */
+  height: 100vh; /* Ensure sidebar takes full height */
+}
+
+/* Sidebar title and summary */
+.report-sidebar h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px; /* Add space below the title */
+  text-align: center;
+}
+
+.report-score-summary p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Question panel in sidebar - 2D matrix styling */
+.report-question-panel {
+  list-style: none;
+  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content:space-evenly ; /* Distribute the items evenly */
+}
+
+.report-question-item {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 50%; /* Make buttons round */
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  width: 20px; /* Fixed size for round button */
+  height: 20px; /* Fixed size for round button */
+  line-height: 20px; /* Center text inside the button */
+}
+
+/* The question item styles for correct/incorrect states */
+.report-question-item.correct {
+  background-color: #28a745;
+  color: white;
+}
+
+.report-question-item.incorrect {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Back button */
+.report-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.report-back-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.report-back-button:hover {
+  background-color: #0056b3;
+}
+
+/* Main content styling */
+.report-main-content {
+  flex-grow: 1;
+  max-width: 100%; /* Allow the report part to take the remaining space */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content */
+}
+
+/* Report title */
+.report-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Question details section */
+.report-question-details {
+  max-height: 550px; /* Set max height for the scrollable section */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden;
+  width: 100%; /* Ensure it takes up full width */
+}
+
+/* Individual question card */
+.report-question-card {
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%; /* Full width of parent container */
+}
+
+.question-text {
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.correct-answer {
+  color: #28a745;
+}
+
+.incorrect-answer {
+  color: #dc3545;
+}
+
+.correct {
+  color: #28a745;
+}
+
+.incorrect {
+  color: #dc3545;
+}

@@ -1,0 +1,44 @@
+.q-question-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;  /* Fixed height for consistency */
+  overflow-y: auto;  /* Scrollable content for longer questions */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.q-question-text {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.q-choices-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.q-choice-btn {
+  padding: 10px;
+  border: 2px solid #ccc;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.q-choice-btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.q-choice-btn.selected {
+  background-color: #28a745; /* Green for selected choice */
+  color: white;
+  border-color: #28a745; /* Match border color with background */
+}
