@@ -16,9 +16,13 @@ let quizQuestions = []; // In-memory JSON object to store questions
 
 // Middleware
 app.use(cors({
-  origin: 'https://quizz-app-frontend-steel.vercel.app',
-  credentials: true
+  origin: 'https://quizz-app-frontend-steel.vercel.app', // Allow requests from your frontend
+  credentials: true, // Allow cookies and credentials
 }));
+
+// Handle preflight requests (OPTIONS)
+app.options('*', cors());
+
 app.use(express.json());
 
 // Decode HTML entities
