@@ -17,7 +17,7 @@ export const fetchQuestions = async () => {
 // Submit Quiz
 export const submitQuiz = async (answers) => {
   try {
-    const response = await axios.post(`${API_URL}/submit`, { answers });
+    const response = await axios.post(`${API_URL}/api/quiz/submit`, { answers });
     return response.data;
   } catch (error) {
     console.error('Error submitting quiz:', error);

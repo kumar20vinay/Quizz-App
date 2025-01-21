@@ -54,7 +54,7 @@ const fetchQuestionsToMemory = async () => {
 };
 
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('Quiz App API');
 })
 // Route to register a new user
