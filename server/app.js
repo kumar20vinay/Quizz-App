@@ -57,6 +57,7 @@ const fetchQuestionsToMemory = async () => {
 app.get('/', (req, res) => {
   res.send('Quiz App API');
 })
+
 // Route to register a new user
 app.post('/auth/register', async (req, res) => {
   const { email, password } = req.body;
