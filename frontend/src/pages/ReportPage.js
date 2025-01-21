@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 function ReportPage({ onBack }) {
   const { id } = useParams(); // Get quiz ID from URL
   const [quizResult, setQuizResult] = useState(null);
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     // Fetch quiz result by ID from backend API
     axios

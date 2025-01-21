@@ -8,7 +8,7 @@ function Dashboard() {
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
   const email = sessionStorage.getItem('userEmail');
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     if (email) {
       axios

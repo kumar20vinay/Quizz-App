@@ -5,12 +5,14 @@ import Timer from '../components/Timer';
 import { useNavigate } from 'react-router-dom';
 import './QuizPage.css';
 
+
 function QuizPage() {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [attemptedQuestions, setAttemptedQuestions] = useState(new Set());
   const navigate = useNavigate();
+  axios.defaults.withCredentials = true;
 
   // Fetch the email from sessionStorage
   const email = sessionStorage.getItem('userEmail');

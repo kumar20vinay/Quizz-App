@@ -1,4 +1,3 @@
-// src/pages/HomePage.js
 
 import React, { useState } from 'react';
 import axios from 'axios';
@@ -13,7 +12,7 @@ function HomePage() {
   const [userData, setUserData] = useState(null);
   const [quizzes, setQuizzes] = useState([]);
   const navigate = useNavigate();
-
+  axios.defaults.withCredentials = true;
   // Handle user login
   const login = async () => {
     if (email && password) {

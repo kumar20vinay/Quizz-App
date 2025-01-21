@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Base URL of the API
 const API_URL = 'https://quizz-app-backend-beta.vercel.app';
-
+axios.defaults.withCredentials = true;
 // Fetch Questions
 export const fetchQuestions = async () => {
   try {
